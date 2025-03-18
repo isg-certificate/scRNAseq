@@ -16,16 +16,17 @@ date
 
 OUTDIR=../../data/Li_etal_2022/
 mkdir -p ${OUTDIR}
+cd ${OUTDIR}
 
 # download data from figshare
     # Li, Q., Wang, M., Zhang, P. et al. A single-cell transcriptomic atlas tracking the neural basis of division of labour in an ant superorganism. Nat Ecol Evol 6, 1191–1204 (2022). https://doi.org/10.1038/s41559-022-01784-1
-wget -P ${OUTDIR} https://figshare.com/ndownloader/articles/16616353/versions/2
+wget https://figshare.com/ndownloader/articles/16616353/versions/2
 
 # the zip file is just named '2'
-unzip ${OUTDIR}/2
+unzip 2
 
 # remove zipfile
-rm ${OUTDIR}/2
+# rm ${OUTDIR}/2
 
 # decompress genomic resources
 for file in ${OUTDIR}/M.pharaonis*gz; do gunzip $file; done
