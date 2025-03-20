@@ -17,7 +17,7 @@ date
 module load STAR/2.7.11b
 
 INDIR=../../data/fastq
-OUTDIR=../../results/02_counts
+OUTDIR=../../results/03_counts
 mkdir -p ${OUTDIR}
 
 GENOME=../../data/Li_etal_2022/genomeIndex
@@ -38,6 +38,6 @@ STAR \
     --soloUMIposition 0_32_0_41 \
     --soloCBwhitelist None None \
     --soloCBmatchWLtype Exact \
-    --outFileNamePrefix ${OUTDIR}/SRR19020406_CB_UMI_complex
+    --outFileNamePrefix ${OUTDIR}/SRR19020406
 
 

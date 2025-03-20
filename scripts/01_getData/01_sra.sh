@@ -34,4 +34,4 @@ ACCLIST=../../metadata/subset.txt
 cat $ACCLIST | head -n 3 | parallel -j 3 "fasterq-dump -O ${OUTDIR} {}"
 
 # compress the files 
-ls ${OUTDIR}/*fastq | parallel -j 3 gzip
+ls ${OUTDIR}/*fastq | parallel -j 6 gzip
