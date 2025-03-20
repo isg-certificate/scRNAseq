@@ -28,7 +28,7 @@ OUTDIR=../../data/fastq
     mkdir -p ${OUTDIR}
 METADATA=../../metadata/SraRunTable.txt
 
-ACCLIST=../../metadata/accessionlist.txt
+ACCLIST=../../metadata/subset.txt
 
 # use parallel to download 2 accessions at a time. 
 cat $ACCLIST | head -n 3 | parallel -j 3 "fasterq-dump -O ${OUTDIR} {}"

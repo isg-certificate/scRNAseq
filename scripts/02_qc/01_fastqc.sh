@@ -2,8 +2,8 @@
 #SBATCH --job-name=fastqc
 #SBATCH -n 1
 #SBATCH -N 1
-#SBATCH -c 16
-#SBATCH --mem=10G
+#SBATCH -c 12
+#SBATCH --mem=15G
 #SBATCH --qos=general
 #SBATCH --partition=general
 #SBATCH --mail-user=
@@ -21,5 +21,5 @@ INDIR=../../data/fastq/
 OUTDIR=../../results/02_qc/fastqc
 mkdir -p ${OUTDIR}
 
-find ${INDIR} -name "SRR*fastq.gz" | parallel -j 4 \
-    fastqc -t 4 -o ${OUTDIR} ${INDIR}/{}
+find ${INDIR} -name "SRR*fastq.gz" | parallel -j 6 \
+    fastqc -t 2 -o ${OUTDIR} ${INDIR}/{}
