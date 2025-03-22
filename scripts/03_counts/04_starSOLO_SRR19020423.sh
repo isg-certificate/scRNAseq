@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=counts
+#SBATCH --job-name=counts_SRR19020423
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH -c 16
@@ -21,8 +21,8 @@ OUTDIR=../../results/03_counts
 mkdir -p ${OUTDIR}
 
 GENOME=../../data/Li_etal_2022/genomeIndex
-FQREAD=${INDIR}/SRR19020406_2.fastq.gz
-FQBARCODE=${INDIR}/SRR19020406_1.fastq.gz
+FQREAD=${INDIR}/SRR19020423_2.fastq.gz
+FQBARCODE=${INDIR}/SRR19020423_1.fastq.gz
 
 # read file needs to be first, barcode file second (reverse from our data)
      # usually you want a barcode whitelist, but we don't have one. 
@@ -32,12 +32,14 @@ STAR \
     --genomeDir ${GENOME} \
     --readFilesIn ${FQREAD} ${FQBARCODE} \
     --readFilesCommand zcat \
-    --soloType CB_UMI_Complex \
-    --soloBarcodeReadLength 41 \
-    --soloCBposition 0_0_0_10 0_17_0_26 \
-    --soloUMIposition 0_32_0_41 \
-    --soloCBwhitelist None None \
+    --soloType CB_UMI_Simple \
+    --soloBarcodeReadLength 30 \
+    --soloCBstart 1 \
+    --soloCBlen 20 \
+    --soloUMIstart 21 \
+    --soloUMIlen 10 \
+    --soloCBwhitelist None \
     --soloCBmatchWLtype Exact \
-    --outFileNamePrefix ${OUTDIR}/SRR19020406
+    --outFileNamePrefix ${OUTDIR}/SRR19020423
 
 
