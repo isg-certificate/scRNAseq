@@ -25,7 +25,7 @@ cd ${OUTDIR}
 wget https://figshare.com/ndownloader/articles/16616353/versions/2
 
 # make sure you get this file Mpha.umi.geneMatrix.gz and name it this. 
-wget https://figshare.com/ndownloader/files/35070388
+# wget https://figshare.com/ndownloader/files/35070388
 
 # the zip file is just named '2'
 unzip 2

@@ -22,11 +22,11 @@ date
 module load parallel/20180122
 module load sratoolkit/3.0.1
 
-# The data are from this study:
+# The data are from this study, NCBI BioProject: PRJNA833256
+# Li, Q., Wang, M., Zhang, P. et al. A single-cell transcriptomic atlas tracking the neural basis of division of labour in an ant superorganism. Nat Ecol Evol 6, 1191–1204 (2022). https://doi.org/10.1038/s41559-022-01784-1
 
 OUTDIR=../../data/fastq
     mkdir -p ${OUTDIR}
-METADATA=../../metadata/SraRunTable.txt
 
 ACCLIST=../../metadata/subset.txt
 

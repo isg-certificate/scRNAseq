@@ -18,7 +18,7 @@ module load STAR/2.7.11b
 module load bioawk
 
 INDIR=../../data/fastq
-OUTDIR=../../results/02_counts
+OUTDIR=../../results/03_counts
 mkdir -p ${OUTDIR}
 
 GENOME=../../data/Li_etal_2022/genomeIndex
